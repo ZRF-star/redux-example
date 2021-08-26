@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { postUpdated } from './postsSlice';
+//./src/features/posts/EditPostForm.js
+// Module not found: Can't resolve './postsSlice' in '/Volumes/E/projects/react-study/reactApp/redux-study/redux-example/src/features/posts'
+// 居然是因为拼写错误，呜呜呜
+import { postUpdated } from './postSlice';
 
 export const EditPostForm = ({ match }) => {
   const { postId } = match.params;
