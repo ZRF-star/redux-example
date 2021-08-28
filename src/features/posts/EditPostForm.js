@@ -4,14 +4,12 @@ import { useHistory } from 'react-router-dom';
 //./src/features/posts/EditPostForm.js
 // Module not found: Can't resolve './postsSlice' in '/Volumes/E/projects/react-study/reactApp/redux-study/redux-example/src/features/posts'
 // 居然是因为拼写错误，呜呜呜
-import { postUpdated } from './postSlice';
+import { postUpdated, selectPostById } from './postSlice';
 
 export const EditPostForm = ({ match }) => {
   const { postId } = match.params;
 
-  const post = useSelector((state) =>
-    state.posts.find((post) => post.id === postId)
-  );
+  const post = useSelector((state) => selectPostById(state, postId));
 
   const [title, setTitle] = useState(post.title);
   const [content, setContent] = useState(post.content);
